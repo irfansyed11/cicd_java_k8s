@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: gamutkart-deploy
+    labels:
+      app: gamutkart-app
+
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      app: gamutkart-app
+
+  template:
+    metadata:
+      name: gamutkart-app
+      labels:
+        app: gamutkart-app
+
+    spec:
+      containers:
+        - name: gamutkart-container
+          image: nageshvkn/gamutkart-img
+          ports:
+          - containerPort: 8080
+          command: ["/bin/sh"]
+          args:  ["-c", "/root/apache-tomcat-8.5.38/bin/startup.sh; while true; do sleep 1; done;"]
+
