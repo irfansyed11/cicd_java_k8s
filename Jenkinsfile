@@ -1,5 +1,7 @@
 pipeline {
-    agent docker
+    agent {
+        label "docker"
+    }
 
 //	tools {
 //		jdk 'jdk8'
