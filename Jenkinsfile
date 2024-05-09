@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent docker
 
 //	tools {
 //		jdk 'jdk8'
@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone-Repo') {
 	    	steps {
-	        	checkout scm
+	        	docker run -it maven mvn clean install
 	    	}
         }
 
