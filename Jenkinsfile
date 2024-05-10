@@ -28,7 +28,7 @@ pipeline {
            }
            steps {
              script {
-               sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
+               sh 'docker build -t ${DOCKER_IMAGE} .'
 	       // this code block requires 'Docker Pipeline Plugin' installed
                 def dockerImage = docker.image("${DOCKER_IMAGE}")
                 docker.withRegistry('https://registry.hub.docker.com/v2', "docker-cred") {
