@@ -23,19 +23,27 @@ pipeline {
                sh "./myscript.sh"
             }
         }
-		
-        stage('build docker image and push') {
-            steps {
-                sh 'docker build -t irfansyed11/javaapp .'
-                sh 'docker tag irfansyed11/javaapp irfansyed11/javaapp'
-                sh 'docker login '
+	stage('Build and Push Docker Image') {
+      environment {
+        DOCKER_IMAGE = "irfansyed11/javaapp:${BUILD_NUMBER}"
+        // DOCKERFILE_LOCATION = "java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
+        REGISTRY_CREDENTIALS = credentials('docker-cred')
+      }
+      steps {
+        script {
+            sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
+	    // this code block requires 'Docker Pipeline Plugin' installed
+            def dockerImage = docker.image("${DOCKER_IMAGE}")
+            docker.withRegistry('https://registry.hub.docker.com/v2', "docker-cred") {
+                dockerImage.push()
             }
         }
+      }
+    }
 
         stage('Deployment') {
             steps {
-                sh 'sshpass -p "wiculty" scp target/gamutkart.war wiculty@172.17.0.2:/home/wiculty/Distros/apache-tomcat-9.0.88/webapps'
-                sh 'sshpass -p "wiculty" ssh wiculty@172.17.0.2 "/home/wiculty/Distros/apache-tomcat-9.0.88/bin/startup.sh"'
+                sh 'echo "came to deployment"'
             }
         }
     }
