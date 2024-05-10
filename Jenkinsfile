@@ -11,23 +11,24 @@ pipeline {
 //	}
 
     stages {
-        stage('Clone-Repo') {
-	    	steps {
-	        	docker run -it maven mvn clean install
-	    	}
-        }
+        // stage('Clone-Repo') {
+	//   	steps {
+	//        	docker run -it maven mvn clean install
+	//    	}
+        // }
 
         stage('Build') {
-            steps {
-                sh 'mvn install -Dmaven.test.skip=true'
+	    steps {
+               sh "chmod +x myscript.sh"
+               sh "./myscript.sh"
             }
         }
 		
-        stage('Unit Tests') {
+        stage('build docker image and push') {
             steps {
-                sh 'mvn compiler:testCompile'
-                sh 'mvn surefire:test'
-                junit 'target/**/*.xml'
+                sh 'docker build -t irfansyed11/javaapp .'
+                sh 'docker tag irfansyed11/javaapp irfansyed11/javaapp'
+                sh 'docker login '
             }
         }
 
