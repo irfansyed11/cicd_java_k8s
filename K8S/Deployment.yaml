@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: gamutkart-container
-          image: nageshvkn/gamutkart-img
+          image: irfansyed11/javaapp
           ports:
           - containerPort: 8080
           command: ["/bin/sh"]
