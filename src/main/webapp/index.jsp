@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Syed_Irfan technologies - Exclusive DevOps & Cloud Learning Hub</title>
+<title>LOVE YOU ANEESU</title>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -27,7 +27,7 @@
 	<div class="container">
 
 		<header>
-			<h1>Syed_Irfan technologies DevOps & Cloud Learning Platform</h1> 
+			<h1>fro more love please contact</h1> 
 			<h4>Contact: +91-8978540230 Email: irfan26syed@gmail.com</h4> 
 		</header>
 
