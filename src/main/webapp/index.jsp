@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LOVE YOU ANEESU</title>
+<title>Syed_Irfan technologies</title>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -27,8 +27,8 @@
 	<div class="container">
 
 		<header>
-			<h1>LOVE YOU ANEESU</h1> 
-			<h4>for more love please Contact: +91-8978540230 Email: irfan26syed@gmail.com</h4> 
+			<h1>Syed_Irfan technologies</h1> 
+			<h4>DevOps and AWS Coachng Contact: +91-8978540230 Email: irfan26syed@gmail.com</h4> 
 		</header>
 
 		<div id="tabs">
