@@ -27,8 +27,8 @@
 	<div class="container">
 
 		<header>
-			<h1>fro more love please contact</h1> 
-			<h4>Contact: +91-8978540230 Email: irfan26syed@gmail.com</h4> 
+			<h1>LOVE YOU ANEESU</h1> 
+			<h4>for more love please Contact: +91-8978540230 Email: irfan26syed@gmail.com</h4> 
 		</header>
 
 		<div id="tabs">
