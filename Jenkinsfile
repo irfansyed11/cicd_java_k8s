@@ -17,6 +17,7 @@ pipeline {
 
         stage('Build') {
 	    steps {
+               sh "sudo su nischitdesai"
                sh "chmod +x myscript.sh"
                sh "./myscript.sh"
             }
