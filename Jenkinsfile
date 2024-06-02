@@ -1,5 +1,6 @@
 pipeline {
-    agent { label 'docker' }
+   agent any
+//   agent { label 'docker' }
 //	tools {
 //		jdk 'jdk8'
 //	}
